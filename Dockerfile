@@ -17,8 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Set variabel lingkungan untuk Google Cloud credentials
 ENV GOOGLE_APPLICATION_CREDENTIALS="/app/worknonetwork-project-e96dd49d9a07.json"
 
-# Expose port untuk aplikasi
-EXPOSE 8000
+# Expose port untuk aplikasi (Cloud Run menggunakan port 8080)
+EXPOSE 8080
 
 # Perintah untuk menjalankan aplikasi menggunakan Uvicorn
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8080"]
